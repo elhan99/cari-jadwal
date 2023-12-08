@@ -1,69 +1,71 @@
 <template>
     <div>
-    <h1>Cari Jadwal</h1>
-      <input v-model="searchQuery" placeholder="Cari Nama Peneliti..." />
-    <br><br>
+      <p class="text-2xl">Cari Jadwal</p>
+      <input v-model="searchQuery" class="mt-1 block w-full px-3 py-2 rounded-md border border-gray-300 shadow-sm focus:border-black focus:outline-none" placeholder="Masukkan Nama Peneliti..." />
+        <br><br>
       <div v-for="item in filteredItems" :key="item.id">
         Hari/ Tanggal : {{ item.hariTanggal }}<br>
         Bidang Fokus : {{ item.bidangFokus }}<br>
         Room : {{ item.room }}<br>
         Sesi : {{ item.sesi }}<br><br>
 
+      <table class=" w-full text-sm text-left text-gray-500 dark:text-gray-400 table-auto mb-8">
+          
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <tr>
+        <th scope="col" class="text-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white ">No</th>
+        <th scope="col" class="text-left px-6 py-3 ">Nama</th>
+        <th scope="col" class="text-left px-6 py-3 ">Judul</th>
+        <th scope="col" class="text-left px-6 py-3 ">Skema</th>
+        <th scope="col" class="text-left px-6 py-3 ">Institusi</th>
+        <th scope="col" class="text-left px-6 py-3 ">Bidang Fokus</th>
+        <th scope="col" class="text-left px-6 py-3 ">Waktu</th>
+      </tr>
+      </thead>
 
-
-        
-        <table id="customers">
-  <tr>
-    <th>No</th>
-    <th>Nama</th>
-    <th>Judul</th>
-    <th>Skema</th>
-    <th>Institusi</th>
-    <th>Bidang Fokus</th>
-    <th>Waktu</th>
-  </tr>
-  <tr>
-    <td>{{ item.no1 }}</td>
-    <td>{{ item.nama1 }}</td>
-    <td>{{ item.judul1 }}</td>
-    <td>{{ item.skema1 }}</td>
-    <td>{{ item.institusi1 }}</td>
-    <td>{{ item.bidangFokus1 }}</td>
-    <td>{{ item.waktu1 }}</td>
-  </tr>
-  <tr>
-    <td>{{ item.no2 }}</td>
-    <td>{{ item.nama2 }}</td>
-    <td>{{ item.judul2 }}</td>
-    <td>{{ item.skema2 }}</td>
-    <td>{{ item.institusi2 }}</td>
-    <td>{{ item.bidangFokus2 }}</td>
-    <td>{{ item.waktu2 }}</td>
-  </tr>
-  <tr>
-    <td>{{ item.no3 }}</td>
-    <td>{{ item.nama3 }}</td>
-    <td>{{ item.judul3 }}</td>
-    <td>{{ item.skema3 }}</td>
-    <td>{{ item.institusi3 }}</td>
-    <td>{{ item.bidangFokus3 }}</td>
-    <td>{{ item.waktu3 }}</td>
-  </tr>
-  <tr>
-    <td>{{ item.no4 }}</td>
-    <td>{{ item.nama4 }}</td>
-    <td>{{ item.judul4 }}</td>
-    <td>{{ item.skema4 }}</td>
-    <td>{{ item.institusi4 }}</td>
-    <td>{{ item.bidangFokus4 }}</td>
-    <td>{{ item.waktu4 }}</td>
-  </tr>
-  <tr>
-    <td colspan="4">Diskusi</td>
-    <td colspan="3">{{ item.diskusi }}</td>
-  </tr>
-  
-</table>
+      <tbody>
+        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+          <td class="text-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white ">{{ item.no1 }}</td>
+          <td class="text-left px-6 py-6 ">{{ item.nama1 }}</td>
+          <td class="text-left px-6 py-6 ">{{ item.judul1 }}</td>
+          <td class="text-left px-6 py-6 ">{{ item.skema1 }}</td>
+          <td class="text-left px-6 py-6 ">{{ item.institusi1 }}</td>
+          <td class="text-left px-6 py-6 ">{{ item.bidangFokus1 }}</td>
+          <td class="text-left px-6 py-6 ">{{ item.waktu1 }}</td>
+        </tr>
+        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+          <td class="text-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white ">{{ item.no2 }}</td>
+          <td class="text-left px-6 py-6 ">{{ item.nama2 }}</td>
+          <td class="text-left px-6 py-6 ">{{ item.judul2 }}</td>
+          <td class="text-left px-6 py-6 ">{{ item.skema2 }}</td>
+          <td class="text-left px-6 py-6 ">{{ item.institusi2 }}</td>
+          <td class="text-left px-6 py-6 ">{{ item.bidangFokus2 }}</td>
+          <td class="text-left px-6 py-6 ">{{ item.waktu2 }}</td>
+        </tr>
+        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+          <td class="text-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white ">{{ item.no3 }}</td>
+          <td class="text-left px-6 py-6 ">{{ item.nama3 }}</td>
+          <td class="text-left px-6 py-6 ">{{ item.judul3 }}</td>
+          <td class="text-left px-6 py-6 ">{{ item.skema3 }}</td>
+          <td class="text-left px-6 py-6 ">{{ item.institusi3 }}</td>
+          <td class="text-left px-6 py-6 ">{{ item.bidangFokus3 }}</td>
+          <td class="text-left px-6 py-6 ">{{ item.waktu3 }}</td>
+        </tr>
+        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+          <td class="text-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white ">{{ item.no4 }}</td>
+          <td class="text-left px-6 py-6 ">{{ item.nama4 }}</td>
+          <td class="text-left px-6 py-6 ">{{ item.judul4 }}</td>
+          <td class="text-left px-6 py-6 ">{{ item.skema4 }}</td>
+          <td class="text-left px-6 py-6 ">{{ item.institusi4 }}</td>
+          <td class="text-left px-6 py-6 ">{{ item.bidangFokus4 }}</td>
+          <td class="text-left px-6 py-6 ">{{ item.waktu4 }}</td>
+        </tr>
+        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+          <td colspan="4" class="text-left px-6 py-6 ">Diskusi</td>
+          <td colspan="3" class="text-left px-6 py-6 ">{{ item.diskusi }}</td>
+        </tr>
+      </tbody>
+      </table>
 
             <br><br>
         </div>
