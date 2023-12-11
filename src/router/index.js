@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import CariView from '../views/CariView.vue'
+import Cari2View from '../views/Cari2View.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,6 +15,11 @@ const router = createRouter({
       path: '/cari',
       name: 'cari',
       component: CariView
+    },
+    {
+      path: '/cari2',
+      name: 'cari2',
+      component: Cari2View
     },
     {
       path: '/about',
